@@ -1,4 +1,4 @@
-import { MongoClient } from 'mongodb';
+const { MongoClient } = require('mongodb');
 
 const MONGODB_URI = process.env.MONGODB_URI;
 const DATABASE_NAME = 'fourci_db';
@@ -6,7 +6,7 @@ const DATABASE_NAME = 'fourci_db';
 let cachedClient = null;
 let cachedDb = null;
 
-export async function connectToDatabase() {
+async function connectToDatabase() {
   if (cachedClient && cachedDb) {
     return { client: cachedClient, db: cachedDb };
   }
@@ -20,3 +20,5 @@ export async function connectToDatabase() {
 
   return { client, db };
 }
+
+module.exports = { connectToDatabase };
