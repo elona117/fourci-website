@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — FOURCi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body class="bg-white text-gray-900">
+  <div id="header-placeholder"></div>
+  <main>
+    <section class="py-12">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+          <h1 class="text-2xl md:text-3xl font-extrabold">Contact Us</h1>
+          <p class="mt-2 text-gray-600">Questions about our programs or how to partner? Send us a message and we’ll respond promptly.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow p-6 md:p-8">
+          <form id="contact-form" class="grid grid-cols-1 gap-4">
+            <input name="name" placeholder="Your name" class="w-full p-3 border border-gray-200 rounded-lg" />
+            <input name="email" placeholder="Email" class="w-full p-3 border border-gray-200 rounded-lg" />
+            <input name="subject" placeholder="Subject" class="w-full p-3 border border-gray-200 rounded-lg" />
+            <textarea name="message" placeholder="Message" class="w-full p-3 border border-gray-200 rounded-lg h-40"></textarea>
+            <div class="flex items-center justify-between">
+              <button type="submit" class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold">Send Message</button>
+              <p class="text-sm text-gray-500">Or email us at <a href="mailto:info@fourci.org" class="text-green-600">info@fourci.org</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

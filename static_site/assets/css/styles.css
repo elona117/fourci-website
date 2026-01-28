@@ -1,0 +1,29 @@
+/* Minimal custom styles used by the static site */
+.shimmer-overlay{ background: linear-gradient(90deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0.03) 100%); }
+.bg-pattern{ background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120"><path fill="%23e6ffed" d="M0 0h60v60H0zM60 60h60v60H60z"/></svg>'); }
+
+/* Loading/visual animations used by converted components */
+.animate-spin-slow{ animation: spin 8s linear infinite; }
+.animate-spin-slower-rev{ animation: spin-rev 12s linear infinite; }
+.animate-logo-float{ animation: floaty 6s ease-in-out infinite; }
+.animate-tracking-reveal{ animation: tracking 1.6s cubic-bezier(.2,.8,.2,1) forwards; }
+.exit-aperture{ opacity: 0; transform: scale(0.98) translateY(-20px); transition: opacity .9s ease, transform .9s ease; }
+.mesh-bg{ background: radial-gradient(circle at 20% 20%, rgba(16,185,129,0.03), transparent 10%), radial-gradient(circle at 80% 80%, rgba(59,130,246,0.02), transparent 15%); }
+
+@keyframes spin{ to { transform: rotate(360deg); } }
+@keyframes spin-rev{ to { transform: rotate(-360deg); } }
+@keyframes floaty{ 0%{ transform: translateY(0);}50%{ transform: translateY(-6px);}100%{ transform: translateY(0);} }
+@keyframes tracking{ 0%{ letter-spacing: .35em; opacity: 0} 100%{ letter-spacing: .12em; opacity: 1 } }
+
+/* Page transition overlay */
+.page-transition-overlay{ pointer-events:none; }
+.page-transition-bg{ height:100vh; background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.95)); opacity:0; transition:opacity .35s ease; }
+.page-transition-progress{ height:3px; background:linear-gradient(90deg,#16a34a,#059669); transition:width .38s cubic-bezier(.2,.9,.2,1); box-shadow:0 4px 12px rgba(16,185,129,0.15); }
+
+/* Climate Assistant styles */
+#climate-assistant .ca-button{ display:block }
+#climate-assistant .ca-panel{ width:360px; max-width:calc(100vw - 32px); box-shadow:0 20px 50px rgba(2,6,23,0.15); border-radius:16px; overflow:hidden; display:flex; flex-direction:column; }
+#climate-assistant .ca-panel.hidden{ display:none }
+#climate-assistant .ca-panel .bg-green-600{ background-color:#16a34a }
+#climate-assistant #ca-messages{ min-height:120px }
+#climate-assistant .ca-button button{ width:56px; height:56px; }

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Resources — FOURCi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body class="bg-white text-gray-900">
+  <div id="header-placeholder"></div>
+  <main>
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <h1 class="text-3xl md:text-4xl font-extrabold">Resources</h1>
+          <p class="mt-3 text-gray-600">Curated guides, reports, and toolkits to support community resilience work.</p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+          <div class="relative max-w-xl w-full">
+            <input id="resource-search" placeholder="Search resources..." class="w-full border border-gray-200 rounded-lg px-4 py-3" />
+          </div>
+          <div class="flex gap-3 items-center">
+            <a href="/admin.html" class="text-sm px-4 py-2 bg-green-600 text-white rounded-lg">Admin</a>
+            <a href="/contact.html" class="text-sm px-4 py-2 border rounded-lg">Contact</a>
+          </div>
+        </div>
+
+        <div id="resources-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+      </div>
+    </section>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Admin — FOURCi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body class="bg-white text-gray-900">
+  <div id="header-placeholder"></div>
+  <main class="max-w-4xl mx-auto p-6">
+    <h1 class="text-2xl font-bold">Admin</h1>
+    <p class="mt-4 text-gray-600">Manage resources via API (adds to file-based DB). Use the form below to add resources that will appear on the public Resources page.</p>
+
+    <section class="mt-6 bg-white p-6 rounded shadow">
+      <h2 class="font-bold mb-4">Add Resource</h2>
+      <form id="resource-form" class="space-y-4">
+        <input name="title" id="res-title" placeholder="Title" class="w-full p-3 border rounded" required />
+        <input name="link" id="res-link" placeholder="Link (optional)" class="w-full p-3 border rounded" />
+        <textarea name="description" id="res-desc" placeholder="Description" class="w-full p-3 border rounded"></textarea>
+        <div>
+          <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Create Resource</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="mt-6">
+      <h2 class="font-bold mb-4">Existing Resources</h2>
+      <div id="admin-resources" class="space-y-3"></div>
+    </section>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>
