@@ -6,8 +6,10 @@
   "scripts": {
     "start": "node server.js",
     "start:static": "node static_server.js",
+    "start:email": "node static_server_email.js",
     "dev": "nodemon server.js",
-    "seed": "node seed.js"
+    "seed": "node seed.js",
+    "test:email": "node email_test.js"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +19,9 @@
     "cors": "^2.8.6",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
-    "mongoose": "^9.1.5"
+    "mongoose": "^9.1.5",
+    "nodemailer": "^6.9.7",
+    "socket.io": "^4.7.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.11"

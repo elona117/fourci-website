@@ -19,12 +19,15 @@
 
         <div class="bg-white rounded-2xl shadow p-6 md:p-8">
           <form id="contact-form" class="grid grid-cols-1 gap-4">
-            <input name="name" placeholder="Your name" class="w-full p-3 border border-gray-200 rounded-lg" />
-            <input name="email" placeholder="Email" class="w-full p-3 border border-gray-200 rounded-lg" />
-            <input name="subject" placeholder="Subject" class="w-full p-3 border border-gray-200 rounded-lg" />
-            <textarea name="message" placeholder="Message" class="w-full p-3 border border-gray-200 rounded-lg h-40"></textarea>
+            <input name="name" placeholder="Your name" required class="w-full p-3 border border-gray-200 rounded-lg focus:border-green-600 focus:outline-none" />
+            <input name="email" placeholder="Email" type="email" required class="w-full p-3 border border-gray-200 rounded-lg focus:border-green-600 focus:outline-none" />
+            <input name="subject" placeholder="Subject" required class="w-full p-3 border border-gray-200 rounded-lg focus:border-green-600 focus:outline-none" />
+            <textarea name="message" placeholder="Message" required class="w-full p-3 border border-gray-200 rounded-lg focus:border-green-600 focus:outline-none h-40"></textarea>
+            
+            <div id="form-status" class="hidden p-4 rounded-lg text-sm font-medium"></div>
+            
             <div class="flex items-center justify-between">
-              <button type="submit" class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold">Send Message</button>
+              <button id="submit-btn" type="submit" class="bg-green-600 hover:bg-green-700 active:scale-95 text-white px-6 py-3 rounded-lg font-semibold transition-all">Send Message</button>
               <p class="text-sm text-gray-500">Or email us at <a href="mailto:info@fourci.org" class="text-green-600">info@fourci.org</a></p>
             </div>
           </form>

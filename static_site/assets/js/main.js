@@ -382,13 +382,64 @@
     });
   }
 
-  // Contact form (static example)
+  // Contact form with real-time email
   const contactForm = document.getElementById('contact-form');
   if(contactForm){
-    contactForm.addEventListener('submit', (e)=>{
+    contactForm.addEventListener('submit', async (e)=>{
       e.preventDefault();
-      alert('Thank you — form handling not configured in static demo.');
-      contactForm.reset();
+      
+      const submitBtn = document.getElementById('submit-btn');
+      const statusDiv = document.getElementById('form-status');
+      
+      // Get form data
+      const formData = {
+        name: contactForm.querySelector('input[name="name"]').value,
+        email: contactForm.querySelector('input[name="email"]').value,
+        subject: contactForm.querySelector('input[name="subject"]').value,
+        message: contactForm.querySelector('textarea[name="message"]').value
+      };
+      
+      // Show loading state
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      statusDiv.className = 'p-4 rounded-lg text-sm font-medium bg-blue-100 text-blue-700';
+      statusDiv.textContent = 'Sending your message...';
+      statusDiv.classList.remove('hidden');
+      
+      try {
+        // Send to backend API
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData)
+        });
+        
+        const result = await response.json();
+        
+        if (response.ok && result.success) {
+          // Success
+          statusDiv.className = 'p-4 rounded-lg text-sm font-medium bg-green-100 text-green-700';
+          statusDiv.textContent = '✅ Message sent! We\'ll respond shortly.';
+          contactForm.reset();
+          submitBtn.textContent = 'Send Message';
+        } else {
+          // Error from API
+          statusDiv.className = 'p-4 rounded-lg text-sm font-medium bg-red-100 text-red-700';
+          statusDiv.textContent = '❌ Error: ' + (result.error || 'Failed to send message');
+          submitBtn.textContent = 'Send Message';
+        }
+      } catch (error) {
+        // Network or other error
+        statusDiv.className = 'p-4 rounded-lg text-sm font-medium bg-red-100 text-red-700';
+        statusDiv.textContent = '❌ Network error: ' + error.message;
+        submitBtn.textContent = 'Send Message';
+      } finally {
+        submitBtn.disabled = false;
+        // Hide status after 5 seconds if successful
+        if (result && result.success) {
+          setTimeout(() => statusDiv.classList.add('hidden'), 5000);
+        }
+      }
     });
   }
 
